@@ -82,14 +82,14 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Restart"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1W-us-eK5">
-                                <rect key="frame" x="147" y="189" width="98" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1W-us-eK5">
+                                <rect key="frame" x="74" y="189" width="245" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIb-v6-ieJ">
-                                <rect key="frame" x="123" y="287" width="147" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WORD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIb-v6-ieJ">
+                                <rect key="frame" x="50" y="287" width="293" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -99,11 +99,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du7-2h-ZMl">
-                                <rect key="frame" x="167" y="484" width="60" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Next"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORt-zS-mPR">
                                 <rect key="frame" x="150" y="79" width="94.666666666666686" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -123,20 +118,23 @@
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="zn2-oN-nH6" secondAttribute="trailing" constant="74" id="GRv-Hk-5cv"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="Bs9-QB-jSR" secondAttribute="trailing" constant="50" id="MOQ-GD-8Zu"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="B1W-us-eK5" secondAttribute="trailing" constant="148" id="Ujn-Et-pL9"/>
-                            <constraint firstItem="du7-2h-ZMl" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="167" id="YOC-uz-7oO"/>
                             <constraint firstItem="ORt-zS-mPR" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="150" id="cPC-dL-xbF"/>
                             <constraint firstItem="zn2-oN-nH6" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="74" id="d55-PG-lmS"/>
                             <constraint firstItem="ORt-zS-mPR" firstAttribute="top" secondItem="Ekj-2H-ydk" secondAttribute="top" constant="20" id="fGu-LO-awr"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="rIb-v6-ieJ" secondAttribute="trailing" constant="123" id="hWs-23-d2B"/>
-                            <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="du7-2h-ZMl" secondAttribute="trailing" constant="166" id="lID-Rd-82Q"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="bottom" secondItem="Bs9-QB-jSR" secondAttribute="bottom" constant="149" id="mUZ-dg-vac"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="ORt-zS-mPR" secondAttribute="trailing" constant="148.33000000000001" id="o5I-vX-Hcs"/>
                             <constraint firstItem="Bs9-QB-jSR" firstAttribute="leading" secondItem="Wvn-8U-wZT" secondAttribute="trailing" constant="158" id="uut-dH-gwo"/>
-                            <constraint firstItem="Ekj-2H-ydk" firstAttribute="bottom" secondItem="du7-2h-ZMl" secondAttribute="bottom" constant="264" id="yfv-9T-N9H"/>
                             <constraint firstItem="zn2-oN-nH6" firstAttribute="top" secondItem="rIb-v6-ieJ" secondAttribute="bottom" constant="38" id="zee-7R-udc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nsK-nO-hay"/>
+                    <connections>
+                        <outlet property="countdownLabel" destination="B1W-us-eK5" id="f0f-pg-kZl"/>
+                        <outlet property="inputField" destination="zn2-oN-nH6" id="LbI-we-uap"/>
+                        <outlet property="scoreLabel" destination="ORt-zS-mPR" id="h8z-Qt-MtK"/>
+                        <outlet property="wordLabel" destination="rIb-v6-ieJ" id="yiv-Sz-74x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKE-6x-CwX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

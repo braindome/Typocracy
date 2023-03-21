@@ -9,7 +9,7 @@ import Foundation
 
 class WordList {
 
-    private var stringList = [String]()
+    var stringList = [String]()
     
     init() {
         stringList.append("pear")
