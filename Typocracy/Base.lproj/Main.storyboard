@@ -82,20 +82,18 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Restart"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1W-us-eK5">
-                                <rect key="frame" x="74" y="189" width="245" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1W-us-eK5">
+                                <rect key="frame" x="147" y="189" width="98" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="245" id="4lO-aj-Mfm"/>
+                                    <constraint firstAttribute="height" constant="48" id="EQS-ss-94b"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WORD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIb-v6-ieJ">
-                                <rect key="frame" x="50" y="287" width="293" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zn2-oN-nH6">
-                                <rect key="frame" x="74" y="385" width="245" height="40"/>
+                                <rect key="frame" x="74" y="382.33333333333331" width="245" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -105,22 +103,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORD" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIb-v6-ieJ">
+                                <rect key="frame" x="128.66666666666663" y="287" width="141.33333333333337" height="57.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="141.33000000000001" id="jgh-Y7-ICR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ekj-2H-ydk"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="Wvn-8U-wZT" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="50" id="1yK-1Z-pqG"/>
-                            <constraint firstItem="rIb-v6-ieJ" firstAttribute="top" secondItem="B1W-us-eK5" secondAttribute="bottom" constant="50" id="53y-XS-gz9"/>
+                            <constraint firstItem="zn2-oN-nH6" firstAttribute="top" secondItem="rIb-v6-ieJ" secondAttribute="bottom" constant="38" id="2dD-im-lU7"/>
                             <constraint firstItem="B1W-us-eK5" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="147" id="67H-bc-Hs1"/>
                             <constraint firstItem="B1W-us-eK5" firstAttribute="top" secondItem="ORt-zS-mPR" secondAttribute="bottom" constant="68" id="An2-8a-NpX"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="bottom" secondItem="Wvn-8U-wZT" secondAttribute="bottom" constant="150" id="EyH-Pd-z1b"/>
-                            <constraint firstItem="rIb-v6-ieJ" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="123" id="GNe-2O-uXx"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="zn2-oN-nH6" secondAttribute="trailing" constant="74" id="GRv-Hk-5cv"/>
+                            <constraint firstItem="rIb-v6-ieJ" firstAttribute="top" secondItem="B1W-us-eK5" secondAttribute="bottom" constant="50" id="Ipl-4T-G5K"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="Bs9-QB-jSR" secondAttribute="trailing" constant="50" id="MOQ-GD-8Zu"/>
+                            <constraint firstItem="rIb-v6-ieJ" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="128.66999999999999" id="Osm-fx-D0Z"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="B1W-us-eK5" secondAttribute="trailing" constant="148" id="Ujn-Et-pL9"/>
                             <constraint firstItem="ORt-zS-mPR" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="150" id="cPC-dL-xbF"/>
                             <constraint firstItem="zn2-oN-nH6" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="74" id="d55-PG-lmS"/>
                             <constraint firstItem="ORt-zS-mPR" firstAttribute="top" secondItem="Ekj-2H-ydk" secondAttribute="top" constant="20" id="fGu-LO-awr"/>
+                            <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="rIb-v6-ieJ" secondAttribute="trailing" constant="123" id="fv7-pI-1K3"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="rIb-v6-ieJ" secondAttribute="trailing" constant="123" id="hWs-23-d2B"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="bottom" secondItem="Bs9-QB-jSR" secondAttribute="bottom" constant="149" id="mUZ-dg-vac"/>
                             <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="ORt-zS-mPR" secondAttribute="trailing" constant="148.33000000000001" id="o5I-vX-Hcs"/>
@@ -128,7 +137,6 @@
                             <constraint firstItem="zn2-oN-nH6" firstAttribute="top" secondItem="rIb-v6-ieJ" secondAttribute="bottom" constant="38" id="zee-7R-udc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nsK-nO-hay"/>
                     <connections>
                         <outlet property="countdownLabel" destination="B1W-us-eK5" id="f0f-pg-kZl"/>
                         <outlet property="inputField" destination="zn2-oN-nH6" id="LbI-we-uap"/>

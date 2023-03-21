@@ -22,20 +22,17 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         inputField.delegate = self
-        scoreLabel.text = String(game.score)
+        scoreLabel.text = "Score: \(game.score)"
         countdownLabel.text = "\(countdownTime)"
         wordLabel.text = generateNewWord()
         inputField.text = ""
-        
-
+    
     }
-    
-    
     
     func textField(_ textField : UITextField, shouldChangeCharactersIn range : NSRange, replacementString string : String) -> Bool {
     
+        // Nil check (acts as if...)
         guard let inputText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) else {
             return true
         }
@@ -60,13 +57,18 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         print("generateNewWord called")
         
         countdownTime = 5
-        countdownLabel.text = "Time: \(countdownTime)"
+        countdownLabel.text = "\(countdownTime)"
         startCountdown()
         
         return randomWord
     }
     
+    
+    // Creates a timer that repeats indefinitely with interval 1 sec. Third parameter is a closure.
+    // The closure captures a reference to self using [weak self]. This is necessary to avoid a retain cycle.
+    // The closure decrements countdownTime by 1, and updates the countdownLabel to show the new value of countdownTime.
     func startCountdown() {
+
         countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
             guard let self = self else { return }
             self.countdownTime -= 1

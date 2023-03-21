@@ -10,6 +10,8 @@ import Foundation
 class Game {
     var score = 0
     var wordList = WordList()
+    //var listLength : Int
+    //var timer : Int
     
     init(score: Int) {
         self.score = score
