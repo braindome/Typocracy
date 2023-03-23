@@ -15,7 +15,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var countdownLabel: UILabel!
     
     var countdownTimer : Timer?
-    var countdownTime = 5
+    var countdownTime = 8
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         let randomWord = Game.shared.wordList.stringList.randomElement()!
         print("generateNewWord called")
         
-        countdownTime = 5
+        countdownTime = 8
         countdownLabel.text = "\(countdownTime)"
         startCountdown()
         

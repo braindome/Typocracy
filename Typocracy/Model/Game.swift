@@ -18,5 +18,15 @@ class Game {
 
     }
     
-
+    func easy() -> [String] {
+        return wordList.getList(wordList.stringList, n: 20)
+    }
+    
+    func medium() -> [String] {
+        return wordList.getList(wordList.stringList, n: 40)
+    }
+    
+    func hard() -> [String] {
+        return wordList.getList(wordList.stringList, n: 60)
+    }
 }
