@@ -9,10 +9,12 @@ import UIKit
 
 class FinalScoreViewController: UIViewController {
 
+    @IBOutlet weak var finalScoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        finalScoreLabel.text = "Final Score:\n\(Game.shared.score)"
     }
     
 

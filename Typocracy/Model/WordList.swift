@@ -19,9 +19,6 @@ class WordList {
         stringList.append("avocado")
     }
     
-    func pickedLanguage() {
-        
-    }
     
     func easy() {
         

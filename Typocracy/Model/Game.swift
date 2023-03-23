@@ -8,12 +8,12 @@
 import Foundation
 
 class Game {
+    static let shared = Game(score: 0)
     var score = 0
     var wordList = WordList()
-    //var listLength : Int
-    //var timer : Int
     
-    init(score: Int) {
+    
+    private init(score: Int) {
         self.score = score
 
     }

@@ -16,14 +16,12 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     
     var countdownTimer : Timer?
     var countdownTime = 5
-    let game = Game(score: 0)
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         inputField.delegate = self
-        scoreLabel.text = "Score: \(game.score)"
+        scoreLabel.text = "Score: \(Game.shared.score)"
         countdownLabel.text = "\(countdownTime)"
         wordLabel.text = generateNewWord()
         inputField.text = ""
@@ -39,8 +37,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         
         if inputText == wordLabel.text {
             textField.text = ""
-            game.score += 1
-            scoreLabel.text = String(game.score)
+            Game.shared.score += 1
+            scoreLabel.text = String(Game.shared.score)
             wordLabel.text = generateNewWord()
             inputField.resignFirstResponder()
             inputField.text = ""
@@ -53,7 +51,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     func generateNewWord() -> String {
-        let randomWord = game.wordList.stringList.randomElement()!
+        let randomWord = Game.shared.wordList.stringList.randomElement()!
         print("generateNewWord called")
         
         countdownTime = 5
@@ -75,8 +73,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             self.countdownLabel.text = "\(self.countdownTime)"
             if self.countdownTime == 0 {
                 timer.invalidate()
-                self.game.score -= 1
-                self.scoreLabel.text = String(self.game.score)
+                Game.shared.score -= 1
+                self.scoreLabel.text = String(Game.shared.score)
                 self.wordLabel.text = self.generateNewWord()
                 self.inputField.text = ""
             }
