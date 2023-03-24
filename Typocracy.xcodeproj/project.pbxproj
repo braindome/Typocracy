@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A983D71A29CDA95600940E06 /* ScoreboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A983D71929CDA95600940E06 /* ScoreboardViewController.swift */; };
 		A9C01D5229C8F9D200521E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C01D5129C8F9D200521E84 /* AppDelegate.swift */; };
 		A9C01D5429C8F9D200521E84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C01D5329C8F9D200521E84 /* SceneDelegate.swift */; };
 		A9C01D5629C8F9D200521E84 /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C01D5529C8F9D200521E84 /* BlueViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A983D71929CDA95600940E06 /* ScoreboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewController.swift; sourceTree = "<group>"; };
 		A9C01D4E29C8F9D200521E84 /* Typocracy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Typocracy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9C01D5129C8F9D200521E84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9C01D5329C8F9D200521E84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				A9C01D8D29C9B53100521E84 /* GameViewController.swift */,
 				A9C01D8F29C9BC5800521E84 /* FinalScoreViewController.swift */,
+				A983D71929CDA95600940E06 /* ScoreboardViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				A9C01D8529C8FF6E00521E84 /* Game.swift in Sources */,
 				A9C01D9029C9BC5800521E84 /* FinalScoreViewController.swift in Sources */,
 				A9C01D8329C8FBEF00521E84 /* WordList.swift in Sources */,
+				A983D71A29CDA95600940E06 /* ScoreboardViewController.swift in Sources */,
 				A9C01D5229C8F9D200521E84 /* AppDelegate.swift in Sources */,
 				A9C01D8E29C9B53100521E84 /* GameViewController.swift in Sources */,
 				A9C01D5429C8F9D200521E84 /* SceneDelegate.swift in Sources */,

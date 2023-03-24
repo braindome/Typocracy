@@ -15,16 +15,25 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var countdownLabel: UILabel!
     
     var countdownTimer : Timer?
-    var countdownTime = 5
-
+    var countdownTime = 8
+    var gameLength : Int?
+    var playerName : String?
+    var currentList : [String?] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    
         inputField.delegate = self
         scoreLabel.text = "Score: \(Game.shared.score)"
         countdownLabel.text = "\(countdownTime)"
         wordLabel.text = generateNewWord()
         inputField.text = ""
+        //print("Game length: \(String(describing: gameLength))")
+        //print("Player name: \(String(describing: playerName))")
+
+        //listRef = Game.shared.wordList
+        currentList = Game.shared.wordList.getList(stringList: Game.shared.wordList.stringList, n: gameLength!)
     
     }
     
@@ -51,14 +60,14 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     }
     
     func generateNewWord() -> String {
-        let randomWord = Game.shared.wordList.stringList.randomElement()!
+        guard let randomWord = currentList.randomElement() else {return "no"}
         print("generateNewWord called")
         
-        countdownTime = 5
+        countdownTime = 8
         countdownLabel.text = "\(countdownTime)"
         startCountdown()
         
-        return randomWord
+        return randomWord!
     }
     
     
