@@ -8,25 +8,17 @@
 import Foundation
 
 class Game {
-    static let shared = Game(score: 0)
+    static let shared = Game(score: 0, listLength: nil, playerName: nil)
     var score = 0
+    var listLength : Int?
+    var playerName : String?
     var wordList = WordList()
     
     
-    private init(score: Int) {
+    private init(score: Int, listLength: Int?, playerName: String?) {
         self.score = score
-
+        self.listLength = listLength
+        self.playerName = playerName
     }
     
-    func easy() -> [String] {
-        return wordList.getList(wordList.stringList, n: 20)
-    }
-    
-    func medium() -> [String] {
-        return wordList.getList(wordList.stringList, n: 40)
-    }
-    
-    func hard() -> [String] {
-        return wordList.getList(wordList.stringList, n: 60)
-    }
 }
