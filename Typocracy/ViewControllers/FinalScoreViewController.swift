@@ -14,18 +14,19 @@ class FinalScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        finalScoreLabel.text = "Final Score:\n\(Game.shared.score)"
+        finalScoreLabel.text = "Final Score:\n\(String(describing: Game.shared.playerName)), \(Game.shared.score) pts"
     }
     
 
-    /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "highestScoresSegue" {
+            let destination = segue.destination as! ScoreboardViewController
+            destination.name = Game.shared.playerName
+            destination.score = String(Game.shared.score)
+        }
     }
-    */
+    
 
 }
