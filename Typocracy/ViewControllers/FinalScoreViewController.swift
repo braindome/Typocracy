@@ -11,21 +11,35 @@ class FinalScoreViewController: UIViewController {
 
     @IBOutlet weak var finalScoreLabel: UILabel!
     
+    var score : Int?
+    var name : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let name = name, let score = score {
+            // Use the unwrapped values of name and score here
+            print("Player name: \(name)")
+            print("Player score: \(score)")
+        } else {
+            // Handle the case where either name or score is nil
+            print("Player name or score is nil")
+        }
+        
 
-        finalScoreLabel.text = "Final Score:\n\(Game.shared.score)"
+        finalScoreLabel.text = "Final Score:\n " + name! + ", " + String(score!)
     }
     
 
-    /*
-    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "highestScoresSegue" {
+            let destination = segue.destination as! ScoreboardViewController
+            destination.entryName = name
+            destination.entryScore = score
+        }
     }
-    */
+    
 
 }
