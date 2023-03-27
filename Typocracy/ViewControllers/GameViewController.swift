@@ -29,6 +29,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         countdownLabel.text = "\(countdownTime)"
         
         inputField.text = ""
+        
         //print("Game length: \(String(describing: gameLength))")
         //print("Player name: \(String(describing: playerName))")
         
@@ -36,8 +37,10 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         //UserDefaults.standard.set(Game.shared.score, forKey: "finalScore")
 
         //listRef = Game.shared.wordList
+
         currentList = Game.shared.wordList.getList(stringList: Game.shared.wordList.stringList, n: gameLength!)
         wordLabel.text = generateNewWord()
+        startCountdown()
     
     }
     
@@ -75,17 +78,22 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             endGame()
             return ""
         }
+        
+        let currentWord = wordLabel.text ?? ""
+        currentList.removeAll { $0 == currentWord }
+        
         guard let randomWord = currentList.randomElement() else {
-            //endGame()
-            return "no"
+            endGame()
+            return ""
             
         }
         
-        
+        currentList = currentList.filter { $0 != wordLabel.text }
         countdownTime = 8
         countdownLabel.text = "\(countdownTime)"
-        startCountdown()
-        currentList.removeAll { $0 == wordLabel.text}
+        
+        //startCountdown()
+        //currentList.removeAll { $0 == wordLabel.text}
         
         return randomWord!
     }
@@ -96,12 +104,13 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     // The closure decrements countdownTime by 1, and updates the countdownLabel to show the new value of countdownTime.
     func startCountdown() {
 
-        countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { [weak self] timer in
+        countdownTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
             guard let self = self else { return }
             self.countdownTime -= 1
             self.countdownLabel.text = "\(self.countdownTime)"
             if self.countdownTime == 0 {
                 timer.invalidate()
+                
                 Game.shared.score -= 1
                 self.scoreLabel.text = String(Game.shared.score)
                 self.wordLabel.text = self.generateNewWord()
