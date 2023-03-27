@@ -11,10 +11,23 @@ class FinalScoreViewController: UIViewController {
 
     @IBOutlet weak var finalScoreLabel: UILabel!
     
+    var score : Int?
+    var name : String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let name = name, let score = score {
+            // Use the unwrapped values of name and score here
+            print("Player name: \(name)")
+            print("Player score: \(score)")
+        } else {
+            // Handle the case where either name or score is nil
+            print("Player name or score is nil")
+        }
+        
 
-        finalScoreLabel.text = "Final Score:\n\(String(describing: Game.shared.playerName)), \(Game.shared.score) pts"
+        finalScoreLabel.text = "Final Score:\n " + name! + ", " + String(score!)
     }
     
 
@@ -23,8 +36,8 @@ class FinalScoreViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "highestScoresSegue" {
             let destination = segue.destination as! ScoreboardViewController
-            destination.name = Game.shared.playerName
-            destination.score = String(Game.shared.score)
+            destination.entryName = name
+            destination.entryScore = score
         }
     }
     

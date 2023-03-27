@@ -21,6 +21,7 @@
 		A9C01D8529C8FF6E00521E84 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C01D8429C8FF6E00521E84 /* Game.swift */; };
 		A9C01D8E29C9B53100521E84 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C01D8D29C9B53100521E84 /* GameViewController.swift */; };
 		A9C01D9029C9BC5800521E84 /* FinalScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C01D8F29C9BC5800521E84 /* FinalScoreViewController.swift */; };
+		A9DA3D9329D23AFF009C9FC2 /* ScoreboardEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA3D9229D23AFF009C9FC2 /* ScoreboardEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		A9C01D8429C8FF6E00521E84 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		A9C01D8D29C9B53100521E84 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		A9C01D8F29C9BC5800521E84 /* FinalScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScoreViewController.swift; sourceTree = "<group>"; };
+		A9DA3D9229D23AFF009C9FC2 /* ScoreboardEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				A9C01D8229C8FBEF00521E84 /* WordList.swift */,
 				A9C01D8429C8FF6E00521E84 /* Game.swift */,
+				A9DA3D9229D23AFF009C9FC2 /* ScoreboardEntry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				A9C01D5629C8F9D200521E84 /* BlueViewController.swift in Sources */,
 				A9C01D8529C8FF6E00521E84 /* Game.swift in Sources */,
 				A9C01D9029C9BC5800521E84 /* FinalScoreViewController.swift in Sources */,
+				A9DA3D9329D23AFF009C9FC2 /* ScoreboardEntry.swift in Sources */,
 				A9C01D8329C8FBEF00521E84 /* WordList.swift in Sources */,
 				A983D71A29CDA95600940E06 /* ScoreboardViewController.swift in Sources */,
 				A9C01D5229C8F9D200521E84 /* AppDelegate.swift in Sources */,
