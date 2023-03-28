@@ -23,7 +23,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         currentGame = Game(score: 0, listLength: gameLength, playerName: playerName)
     
         inputField.delegate = self
@@ -81,6 +81,8 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    
+    // Flytta till modellen?
     func generateNewWord() -> String {
         if currentList.isEmpty {
             endGame()
@@ -127,7 +129,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    // Flytta till modellen?
     func endGame() {
         
         // Show alert with final score

@@ -27,7 +27,12 @@ class FinalScoreViewController: UIViewController {
         }
         
 
-        finalScoreLabel.text = "Final Score:\n " + name! + ", " + String(score!)
+        if let name = name, let score = score {
+            finalScoreLabel.text = "Final Score:\n " + name + ", " + String(score)
+        } else {
+            // Handle the case where name or score is nil
+            finalScoreLabel.text = "Final Score: N/A"
+        }
     }
     
 

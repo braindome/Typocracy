@@ -115,7 +115,6 @@
 				A9C01D8129C8FBCB00521E84 /* Model */,
 				A9C01D5129C8F9D200521E84 /* AppDelegate.swift */,
 				A9C01D5329C8F9D200521E84 /* SceneDelegate.swift */,
-				A9C01D5529C8F9D200521E84 /* BlueViewController.swift */,
 				A9C01D5729C8F9D200521E84 /* Main.storyboard */,
 				A9C01D5A29C8F9D300521E84 /* Assets.xcassets */,
 				A9C01D5C29C8F9D300521E84 /* LaunchScreen.storyboard */,
@@ -154,6 +153,7 @@
 		A9C01D8629C900C600521E84 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A9C01D5529C8F9D200521E84 /* BlueViewController.swift */,
 				A9C01D8D29C9B53100521E84 /* GameViewController.swift */,
 				A9C01D8F29C9BC5800521E84 /* FinalScoreViewController.swift */,
 				A983D71929CDA95600940E06 /* ScoreboardViewController.swift */,

@@ -109,13 +109,13 @@
         <!--Game View Controller-->
         <scene sceneID="FgJ-ea-7iO">
             <objects>
-                <viewController id="eKP-vJ-sSl" customClass="GameViewController" customModule="Typocracy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="eKP-vJ-sSl" customClass="GameViewController" customModule="Typocracy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K29-Ig-dGj">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvn-8U-wZT">
-                                <rect key="frame" x="50" y="598" width="56" height="35"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wvn-8U-wZT">
+                                <rect key="frame" x="74" y="600" width="56" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Quit">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
@@ -124,63 +124,58 @@
                                     <segue destination="Zf2-1q-93E" kind="show" identifier="segueToFinalScore" id="Hh4-N7-Ydz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-QB-jSR">
-                                <rect key="frame" x="264" y="599" width="79" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Restart">
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
-                                </buttonConfiguration>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1W-us-eK5">
-                                <rect key="frame" x="147" y="189" width="98" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="245" id="4lO-aj-Mfm"/>
-                                    <constraint firstAttribute="height" constant="48" id="EQS-ss-94b"/>
-                                </constraints>
+                                <rect key="frame" x="137" y="248.66666666666663" width="119" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zn2-oN-nH6">
-                                <rect key="frame" x="74" y="373.33333333333331" width="245" height="40"/>
+                                <rect key="frame" x="74" y="405.66666666666669" width="245" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="HcR-U9-hNx"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORt-zS-mPR">
-                                <rect key="frame" x="150" y="79" width="94.666666666666686" height="42"/>
+                                <rect key="frame" x="149" y="164.66666666666666" width="95" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WORD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIb-v6-ieJ">
-                                <rect key="frame" x="50" y="283" width="293" height="48"/>
+                                <rect key="frame" x="87" y="325.66666666666669" width="219" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bs9-QB-jSR">
+                                <rect key="frame" x="240" y="600" width="79" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Restart">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Ekj-2H-ydk"/>
+                        <viewLayoutGuide key="safeArea" id="HFZ-4J-ITz"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
-                            <constraint firstItem="Bs9-QB-jSR" firstAttribute="top" secondItem="zn2-oN-nH6" secondAttribute="bottom" constant="185.66999999999999" id="05A-Il-9Af"/>
-                            <constraint firstItem="Wvn-8U-wZT" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="50" id="1yK-1Z-pqG"/>
-                            <constraint firstItem="B1W-us-eK5" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="147" id="67H-bc-Hs1"/>
-                            <constraint firstItem="rIb-v6-ieJ" firstAttribute="top" secondItem="B1W-us-eK5" secondAttribute="bottom" constant="46" id="7H3-8e-Eh0"/>
-                            <constraint firstItem="B1W-us-eK5" firstAttribute="top" secondItem="ORt-zS-mPR" secondAttribute="bottom" constant="68" id="An2-8a-NpX"/>
-                            <constraint firstItem="Ekj-2H-ydk" firstAttribute="bottom" secondItem="Wvn-8U-wZT" secondAttribute="bottom" constant="150" id="EyH-Pd-z1b"/>
-                            <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="zn2-oN-nH6" secondAttribute="trailing" constant="74" id="GRv-Hk-5cv"/>
-                            <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="Bs9-QB-jSR" secondAttribute="trailing" constant="50" id="MOQ-GD-8Zu"/>
-                            <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="B1W-us-eK5" secondAttribute="trailing" constant="148" id="Ujn-Et-pL9"/>
-                            <constraint firstItem="ORt-zS-mPR" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="150" id="cPC-dL-xbF"/>
-                            <constraint firstItem="zn2-oN-nH6" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="74" id="d55-PG-lmS"/>
-                            <constraint firstItem="ORt-zS-mPR" firstAttribute="top" secondItem="Ekj-2H-ydk" secondAttribute="top" constant="20" id="fGu-LO-awr"/>
-                            <constraint firstItem="rIb-v6-ieJ" firstAttribute="leading" secondItem="Ekj-2H-ydk" secondAttribute="leading" constant="50" id="lFs-hk-LvA"/>
-                            <constraint firstItem="Ekj-2H-ydk" firstAttribute="bottom" secondItem="Bs9-QB-jSR" secondAttribute="bottom" constant="149" id="mUZ-dg-vac"/>
-                            <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="ORt-zS-mPR" secondAttribute="trailing" constant="148.33000000000001" id="o5I-vX-Hcs"/>
-                            <constraint firstItem="zn2-oN-nH6" firstAttribute="top" secondItem="rIb-v6-ieJ" secondAttribute="bottom" constant="42.329999999999998" id="tOj-tw-o3v"/>
-                            <constraint firstItem="Wvn-8U-wZT" firstAttribute="top" secondItem="zn2-oN-nH6" secondAttribute="bottom" constant="184.66999999999999" id="u6O-Bl-83F"/>
-                            <constraint firstItem="Bs9-QB-jSR" firstAttribute="leading" secondItem="Wvn-8U-wZT" secondAttribute="trailing" constant="158" id="uut-dH-gwo"/>
-                            <constraint firstItem="Ekj-2H-ydk" firstAttribute="trailing" secondItem="rIb-v6-ieJ" secondAttribute="trailing" constant="50" id="zM1-Bz-LLf"/>
+                            <constraint firstItem="B1W-us-eK5" firstAttribute="leading" secondItem="K29-Ig-dGj" secondAttribute="leading" constant="137" id="3pX-Se-edG"/>
+                            <constraint firstItem="zn2-oN-nH6" firstAttribute="leading" secondItem="K29-Ig-dGj" secondAttribute="leading" constant="74" id="9sy-gK-nvG"/>
+                            <constraint firstItem="B1W-us-eK5" firstAttribute="centerX" secondItem="rIb-v6-ieJ" secondAttribute="centerX" id="CRs-4B-U8M"/>
+                            <constraint firstItem="zn2-oN-nH6" firstAttribute="centerY" secondItem="K29-Ig-dGj" secondAttribute="centerY" id="F6J-Mp-vhq"/>
+                            <constraint firstItem="ORt-zS-mPR" firstAttribute="centerX" secondItem="B1W-us-eK5" secondAttribute="centerX" id="GRh-VX-EhV"/>
+                            <constraint firstAttribute="bottom" secondItem="Wvn-8U-wZT" secondAttribute="bottom" constant="114" id="Kkk-Ha-RpY"/>
+                            <constraint firstItem="Wvn-8U-wZT" firstAttribute="baseline" secondItem="Bs9-QB-jSR" secondAttribute="baseline" id="MRj-Da-XTo"/>
+                            <constraint firstItem="zn2-oN-nH6" firstAttribute="top" secondItem="rIb-v6-ieJ" secondAttribute="bottom" constant="32" id="O9f-Hb-nCR"/>
+                            <constraint firstItem="rIb-v6-ieJ" firstAttribute="top" secondItem="B1W-us-eK5" secondAttribute="bottom" constant="29" id="PFW-c6-9sC"/>
+                            <constraint firstItem="B1W-us-eK5" firstAttribute="top" secondItem="ORt-zS-mPR" secondAttribute="bottom" constant="42" id="Qu8-56-KLg"/>
+                            <constraint firstItem="ORt-zS-mPR" firstAttribute="centerX" secondItem="K29-Ig-dGj" secondAttribute="centerX" id="U2z-i9-qLs"/>
+                            <constraint firstItem="zn2-oN-nH6" firstAttribute="leading" secondItem="Wvn-8U-wZT" secondAttribute="leading" id="eFi-uO-2L0"/>
+                            <constraint firstItem="zn2-oN-nH6" firstAttribute="trailing" secondItem="Bs9-QB-jSR" secondAttribute="trailing" id="oe9-LA-2lM"/>
+                            <constraint firstItem="rIb-v6-ieJ" firstAttribute="centerX" secondItem="zn2-oN-nH6" secondAttribute="centerX" id="pyX-fl-l9i"/>
+                            <constraint firstItem="rIb-v6-ieJ" firstAttribute="leading" secondItem="K29-Ig-dGj" secondAttribute="leading" constant="87" id="xET-Ko-RZT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -197,9 +192,9 @@
         <!--Final Score View Controller-->
         <scene sceneID="Rpg-2T-Du3">
             <objects>
-                <viewController id="Zf2-1q-93E" customClass="FinalScoreViewController" customModule="Typocracy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Zf2-1q-93E" customClass="FinalScoreViewController" customModule="Typocracy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ybR-uf-77M">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Score:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qY9-F7-TfV">
@@ -209,7 +204,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQh-hK-LiK">
-                                <rect key="frame" x="16" y="601" width="113" height="35"/>
+                                <rect key="frame" x="16" y="636" width="113" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Scoreboard">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
@@ -219,7 +214,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLD-VL-oVT">
-                                <rect key="frame" x="269" y="601" width="108" height="35"/>
+                                <rect key="frame" x="269" y="636" width="108" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="New Game">
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
@@ -252,9 +247,9 @@
         <!--Scoreboard View Controller-->
         <scene sceneID="5Xi-tT-Jsn">
             <objects>
-                <tableViewController id="6Z9-Ci-Wg7" customClass="ScoreboardViewController" customModule="Typocracy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="6Z9-Ci-Wg7" customClass="ScoreboardViewController" customModule="Typocracy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="SuT-LK-0vj">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
