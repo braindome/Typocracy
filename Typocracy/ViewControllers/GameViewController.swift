@@ -37,7 +37,6 @@ class GameViewController: UIViewController, UITextFieldDelegate {
 
         currentList = currentGame!.wordList.getList(stringList: currentGame!.wordList.stringList, n: gameLength!)
         wordLabel.text = generateNewWord()
-        startCountdown()
     
     }
     
@@ -59,24 +58,19 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             return true
         }
         
-        if inputText == wordLabel.text {
-            textField.text = ""
+        if inputText.contains(wordLabel.text!) {
             currentGame!.score += 1
-            scoreLabel.text = String(currentGame!.score)
             wordLabel.text = generateNewWord()
-            inputField.resignFirstResponder()
-            inputField.text = ""
-            inputField.becomeFirstResponder()
-        } else if countdownTime == 0 {
             textField.text = ""
+
+        } else if countdownTime == 0 {
             currentGame!.score -= 1
-            scoreLabel.text = String(currentGame!.score)
             wordLabel.text = generateNewWord()
-            inputField.resignFirstResponder()
-            inputField.text = ""
-            inputField.becomeFirstResponder()
-            
+            textField.text = ""
+
         }
+        
+        scoreLabel.text = String(currentGame!.score)
 
         return true
     }
@@ -84,6 +78,10 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     
     // Flytta till modellen?
     func generateNewWord() -> String {
+        
+        countdownTime = 8
+        countdownLabel.text = "\(countdownTime)"
+        
         if currentList.isEmpty {
             endGame()
             return ""
@@ -95,15 +93,14 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         guard let randomWord = currentList.randomElement() else {
             endGame()
             return ""
-            
         }
         
         currentList = currentList.filter { $0 != wordLabel.text }
-        countdownTime = 8
-        countdownLabel.text = "\(countdownTime)"
+
+        countdownTimer?.invalidate()
+        startCountdown()
+        countdownTimer?.fire()
         
-        //startCountdown()
-        //currentList.removeAll { $0 == wordLabel.text}
         
         return randomWord!
     }
@@ -128,6 +125,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
     
     // Flytta till modellen?
     func endGame() {
