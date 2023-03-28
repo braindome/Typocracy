@@ -30,18 +30,16 @@ class ScoreboardViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        loadScoreboard()
+        
         print("Player name transported to scoreboard vc: \(entryName!)")
         
-        addEntry(name: "John", score: 4)
-        addEntry(name: "Mary", score: 10)
-        addEntry(name: "Sting", score: 1)
                 
         if let name = entryName, let score = entryScore {
              addEntry(name: name, score: score)
          }
         
-        
-        loadScoreboard()
+        scoreboard.sort { ($0["score"] as? Int ?? 0) > ($1["score"] as? Int ?? 0) }
         tableView.reloadData()
         
         print(scoreboard)
@@ -80,6 +78,7 @@ class ScoreboardViewController: UITableViewController {
         scoreboard.append(entry)
         scoreboard.sort { ($0["score"] as? Int ?? 0) > ($1["score"] as? Int ?? 0) }
         tableView.reloadData()
+        saveScoreboard()
     }
     
     
@@ -136,15 +135,7 @@ class ScoreboardViewController: UITableViewController {
         
         cell.textLabel?.text = "\(name)     \(score)"
         
-        /*let cell = tableView.dequeueReusableCell(withIdentifier: "scoreEntryCell", for: indexPath)
-        dict?.updateValue(entryScore!, forKey: entryName!)
 
-        
-        if let name = scoreboard[indexPath.row].name, let score = scoreboard[indexPath.row].score {
-            cell.textLabel?.text = name + "     " + String(score)
-        } else {
-            cell.textLabel?.text = "N/A"
-        }*/
         
         return cell
     }
