@@ -24,13 +24,11 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         game = Game(score: 0, listLength: gameLength, playerName: playerName)
     
         inputField.delegate = self
-        scoreLabel.text = "Score: \(game!.score)"
+        scoreLabel.text = "Score"
         
         game!.countdownUpdateHandler = { [weak self] remainingTime in
             self?.countdownLabel.text = "\(remainingTime)"        }
         
-        inputField.text = ""
-
         wordLabel.text = game!.generateNewWord()
     
     }
