@@ -9,56 +9,34 @@ import UIKit
 
 class ScoreboardViewController: UITableViewController {
     
-    var scoreboard = [[String: Any]]()
-    
+    //var scoreboard = [[String: Any]]()
+    var scoreboard = Scoreboard()
+
     private let defaults = UserDefaults.standard
     
     var entryName : String?
     var entryScore : Int?
     
-  
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadScoreboard()
+        //loadScoreboard()
+        scoreboard.load()
         
         print("Player name transported to scoreboard vc: \(entryName!)")
         
                 
         if let name = entryName, let score = entryScore {
-             addEntry(name: name, score: score)
-         }
-        
-        scoreboard.sort { ($0["score"] as? Int ?? 0) > ($1["score"] as? Int ?? 0) }
-        tableView.reloadData()
-        
-        print(scoreboard)
-        
-
-    }
-    
-    private func loadScoreboard() {
-        if let savedScoreboard = defaults.object(forKey: "scoreboard") as? [[String: Any]] {
-            scoreboard = savedScoreboard
-        } else {
-            scoreboard = []
+            scoreboard.addEntry(ScoreboardEntry(name: name, score: score))
+            tableView.reloadData()
+            scoreboard.save()
         }
-    }
-    
-    private func saveScoreboard() {
-        defaults.set(scoreboard, forKey: "scoreboard")
-    }
-
-    func addEntry(name: String, score: Int) {
         
-        let entry = ["name" : name, "score" : score] as [String : Any]
-        scoreboard.append(entry)
-        scoreboard.sort { ($0["score"] as? Int ?? 0) > ($1["score"] as? Int ?? 0) }
+        scoreboard.entries.sort { $0.score ?? 0 > $1.score ?? 0 }
+        print(scoreboard.entries)
         tableView.reloadData()
-        saveScoreboard()
+
     }
-    
 
     // MARK: - Table view data source
 
@@ -69,19 +47,35 @@ class ScoreboardViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return scoreboard.count
+        return scoreboard.entries.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreEntryCell", for: indexPath)
-        let entry = scoreboard[indexPath.row]
-        let name = entry["name"] as? String ?? "N/A"
-        let score = entry["score"] as? Int ?? 0
+        let entry = scoreboard.entries[indexPath.row]
+        let name = entry.name
+        let score = entry.score
+        let date = entry.date
+                
+        // Format the text using attributed strings
+        let attrs = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
+        let nameAttrs = [NSAttributedString.Key.foregroundColor: UIColor.blue,
+                         NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
+        let scoreAttrs = [NSAttributedString.Key.foregroundColor: UIColor.red,
+                          NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
         
-        cell.textLabel?.text = "\(name)     \(score)"
+        let nameString = NSMutableAttributedString(string: name!, attributes: nameAttrs)
+        let scoreString = NSMutableAttributedString(string: " \(score!)", attributes: scoreAttrs)
+        let dateString = NSAttributedString(string: "  \(date!)", attributes: attrs)
         
+        let attributedString = NSMutableAttributedString()
+        attributedString.append(nameString)
+        attributedString.append(scoreString)
+        attributedString.append(dateString)
+        
+        cell.textLabel?.attributedText = attributedString
         
         return cell
     }
