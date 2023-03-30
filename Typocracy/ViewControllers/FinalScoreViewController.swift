@@ -11,11 +11,25 @@ class FinalScoreViewController: UIViewController {
 
     @IBOutlet weak var finalScoreLabel: UILabel!
     
+    @IBAction func newGameButtonPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let initialViewController = storyboard.instantiateInitialViewController() else {
+            return
+        }
+
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = initialViewController
+            window.makeKeyAndVisible()
+        }
+    }
     var score : Int?
     var name : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addGradientBackground(colors: [UIColor.green, UIColor.orange], startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 1, y: 1))
         
         if let name = name, let score = score {
             // Use the unwrapped values of name and score here

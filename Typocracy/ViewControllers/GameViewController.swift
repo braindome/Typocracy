@@ -14,22 +14,44 @@ class GameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var inputField: UITextField!
     @IBOutlet weak var countdownLabel: UILabel!
     
+    @IBAction func restartButtonTapped(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let initialViewController = storyboard.instantiateInitialViewController() else {
+            return
+        }
+
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = initialViewController
+            window.makeKeyAndVisible()
+        }
+        
+    }
+    
     var gameLength : Int?
     var playerName : String?
     var game : Game?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addGradientBackground(colors: [UIColor.red, UIColor.yellow], startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 1, y: 1))
                 
         game = Game(score: 0, listLength: gameLength, playerName: playerName)
     
         inputField.delegate = self
-        scoreLabel.text = "Score"
+        scoreLabel.text = ""
         
         game!.countdownUpdateHandler = { [weak self] remainingTime in
             self?.countdownLabel.text = "\(remainingTime)"
+            if remainingTime <= 3 {
+                self?.countdownLabel.textColor = .red
+            }
             if remainingTime == 0 {
                 self?.game!.score -= 1
+                self?.countdownLabel.textColor = .black
                 self?.scoreLabel.text = String(self?.game!.score ?? 0)
                 self?.wordLabel.text = self?.game!.generateNewWord()
                 if let inputText = self?.inputField.text, inputText != "" {
@@ -68,6 +90,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             print("Input text is correct")
             game!.score += 1
             updateLabels()
+            countdownLabel.textColor = .black
         }
         
         UIView.animate(withDuration: 0.3, delay: 0.3, animations: {textField.backgroundColor = .white})
