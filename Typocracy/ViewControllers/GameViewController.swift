@@ -32,6 +32,14 @@ class GameViewController: UIViewController, UITextFieldDelegate {
                 self?.game!.score -= 1
                 self?.scoreLabel.text = String(self?.game!.score ?? 0)
                 self?.wordLabel.text = self?.game!.generateNewWord()
+                if let inputText = self?.inputField.text, inputText != "" {
+                    UIView.animate(withDuration: 0.5, delay: 0, options: [.beginFromCurrentState], animations: {
+                        self?.inputField.backgroundColor = .red
+                    }, completion: { _ in
+                        self?.inputField.backgroundColor = .white
+                        self?.inputField.text = ""
+                    })
+                }
             }
         }
         
@@ -56,13 +64,13 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         }
         
         if inputText == wordLabel.text {
+            textField.backgroundColor = .green
+            print("Input text is correct")
             game!.score += 1
             updateLabels()
-
-        } else if Int(countdownLabel.text!) == 0 {
-            game!.score -= 1
-            updateLabels()
         }
+        
+        UIView.animate(withDuration: 0.3, delay: 0.3, animations: {textField.backgroundColor = .white})
         
         if game!.currentList.count == 0 {
             game!.countdownTimer?.invalidate()
@@ -76,6 +84,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         wordLabel.text = game!.generateNewWord()
         DispatchQueue.main.async {
             self.inputField.text = ""
+            self.inputField.backgroundColor = .white
         }
     }
     
