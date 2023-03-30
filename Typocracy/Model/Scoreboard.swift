@@ -27,6 +27,10 @@ class Scoreboard {
             UserDefaults.standard.set(encodedEntries, forKey: "scoreboard")
         }
     }
+    
+    func reset() {
+        entries.removeAll()
+    }
 
     enum CodingKeys: String, CodingKey {
         case entries

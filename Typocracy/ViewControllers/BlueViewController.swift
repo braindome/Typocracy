@@ -17,7 +17,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.addGradientBackground(colors: [UIColor.blue, UIColor.gray], startPoint: CGPoint(x: 0, y: 0), endPoint: CGPoint(x: 1, y: 1))
         listLengthPickerView.selectRow(0, inComponent: 0, animated: false)
     }
     

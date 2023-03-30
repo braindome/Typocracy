@@ -9,10 +9,22 @@ import UIKit
 
 class ScoreboardViewController: UITableViewController {
     
-    //var scoreboard = [[String: Any]]()
     var scoreboard = Scoreboard()
 
     private let defaults = UserDefaults.standard
+    
+    @IBAction func restartButtonPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let initialViewController = storyboard.instantiateInitialViewController() else {
+            return
+        }
+
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = initialViewController
+            window.makeKeyAndVisible()
+        }
+    }
     
     var entryName : String?
     var entryScore : Int?
@@ -20,12 +32,8 @@ class ScoreboardViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //loadScoreboard()
         scoreboard.load()
-        
-        print("Player name transported to scoreboard vc: \(entryName!)")
-        
-                
+ 
         if let name = entryName, let score = entryScore {
             scoreboard.addEntry(ScoreboardEntry(name: name, score: score))
             tableView.reloadData()
