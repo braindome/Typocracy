@@ -35,4 +35,4 @@ För att få VG krävs det att du också implementerar följande funktioner:
 - [x] Utforska User Defaults ✅ 2023-03-27
 - [x] Timer går för fort ✅ 2023-03-27
 - [x] Varför stannar timern ibland? ✅ 2023-03-28
-- [ ] Sista bokstaven i inputrutan
+- [x] Sista bokstaven i inputrutan ✅ 2023-03-30
