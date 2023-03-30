@@ -27,7 +27,13 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         scoreLabel.text = "Score"
         
         game!.countdownUpdateHandler = { [weak self] remainingTime in
-            self?.countdownLabel.text = "\(remainingTime)"        }
+            self?.countdownLabel.text = "\(remainingTime)"
+            if remainingTime == 0 {
+                self?.game!.score -= 1
+                self?.scoreLabel.text = String(self?.game!.score ?? 0)
+                self?.wordLabel.text = self?.game!.generateNewWord()
+            }
+        }
         
         wordLabel.text = game!.generateNewWord()
     
@@ -49,19 +55,25 @@ class GameViewController: UIViewController, UITextFieldDelegate {
             return true
         }
         
-        if inputText.contains(wordLabel.text!) {
+        if inputText == wordLabel.text {
             game!.score += 1
+            scoreLabel.text = String(game!.score)
             wordLabel.text = game!.generateNewWord()
-            textField.text = ""
+            DispatchQueue.main.async {
+                self.inputField.text = ""
+            }
 
-        } else if game!.countdownTime == 0 {
+        } else if Int(countdownLabel.text!) == 0 {
             game!.score -= 1
+            scoreLabel.text = String(game!.score)
             wordLabel.text = game!.generateNewWord()
-            textField.text = ""
+            DispatchQueue.main.async {
+                self.inputField.text = ""
+            }
 
         }
         
-        scoreLabel.text = String(game!.score)
+        //scoreLabel.text = String(game!.score)
         if game!.currentList.count == 0 {
             game!.countdownTimer?.invalidate()
             endGameAlert()
