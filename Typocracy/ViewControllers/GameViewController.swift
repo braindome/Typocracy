@@ -57,28 +57,26 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         
         if inputText == wordLabel.text {
             game!.score += 1
-            scoreLabel.text = String(game!.score)
-            wordLabel.text = game!.generateNewWord()
-            DispatchQueue.main.async {
-                self.inputField.text = ""
-            }
+            updateLabels()
 
         } else if Int(countdownLabel.text!) == 0 {
             game!.score -= 1
-            scoreLabel.text = String(game!.score)
-            wordLabel.text = game!.generateNewWord()
-            DispatchQueue.main.async {
-                self.inputField.text = ""
-            }
-
+            updateLabels()
         }
         
-        //scoreLabel.text = String(game!.score)
         if game!.currentList.count == 0 {
             game!.countdownTimer?.invalidate()
             endGameAlert()
         }
         return true
+    }
+    
+    private func updateLabels() {
+        scoreLabel.text = String(game!.score)
+        wordLabel.text = game!.generateNewWord()
+        DispatchQueue.main.async {
+            self.inputField.text = ""
+        }
     }
     
     func endGameAlert() {
