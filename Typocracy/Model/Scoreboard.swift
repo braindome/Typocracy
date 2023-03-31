@@ -32,9 +32,6 @@ class Scoreboard {
         entries.removeAll()
     }
 
-    enum CodingKeys: String, CodingKey {
-        case entries
-    }
 }
 
 

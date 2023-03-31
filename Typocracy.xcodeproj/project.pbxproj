@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A902840529D605A20082B99E /* GradientBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902840429D605A20082B99E /* GradientBackground.swift */; };
+		A902840B29D661190082B99E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A902840929D661190082B99E /* TableViewCell.swift */; };
+		A902840C29D661190082B99E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A902840A29D661190082B99E /* TableViewCell.xib */; };
 		A983D71A29CDA95600940E06 /* ScoreboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A983D71929CDA95600940E06 /* ScoreboardViewController.swift */; };
 		A98464BF29D3B7220003A92F /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98464BE29D3B7220003A92F /* Scoreboard.swift */; };
 		A9C01D5229C8F9D200521E84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C01D5129C8F9D200521E84 /* AppDelegate.swift */; };
@@ -45,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		A902840429D605A20082B99E /* GradientBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBackground.swift; sourceTree = "<group>"; };
+		A902840929D661190082B99E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		A902840A29D661190082B99E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		A983D71929CDA95600940E06 /* ScoreboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardViewController.swift; sourceTree = "<group>"; };
 		A98464BE29D3B7220003A92F /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
 		A9C01D4E29C8F9D200521E84 /* Typocracy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Typocracy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A902840829D660DE0082B99E /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				A902840929D661190082B99E /* TableViewCell.swift */,
+				A902840A29D661190082B99E /* TableViewCell.xib */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
 		A9C01D4529C8F9D200521E84 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +128,7 @@
 		A9C01D5029C8F9D200521E84 /* Typocracy */ = {
 			isa = PBXGroup;
 			children = (
+				A902840829D660DE0082B99E /* TableViewCells */,
 				A9C01D8629C900C600521E84 /* ViewControllers */,
 				A9C01D8129C8FBCB00521E84 /* Model */,
 				A9C01D5129C8F9D200521E84 /* AppDelegate.swift */,
@@ -272,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9C01D5E29C8F9D300521E84 /* LaunchScreen.storyboard in Resources */,
+				A902840C29D661190082B99E /* TableViewCell.xib in Resources */,
 				A9C01D5B29C8F9D300521E84 /* Assets.xcassets in Resources */,
 				A9C01D5929C8F9D200521E84 /* Main.storyboard in Resources */,
 			);
@@ -307,6 +322,7 @@
 				A9C01D8329C8FBEF00521E84 /* WordList.swift in Sources */,
 				A983D71A29CDA95600940E06 /* ScoreboardViewController.swift in Sources */,
 				A9C01D5229C8F9D200521E84 /* AppDelegate.swift in Sources */,
+				A902840B29D661190082B99E /* TableViewCell.swift in Sources */,
 				A9C01D8E29C9B53100521E84 /* GameViewController.swift in Sources */,
 				A9C01D5429C8F9D200521E84 /* SceneDelegate.swift in Sources */,
 			);
