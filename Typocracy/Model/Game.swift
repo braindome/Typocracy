@@ -22,7 +22,6 @@ class Game {
     
 
     
-    
     init(score: Int, listLength: Int?, playerName: String?) {
         self.score = score
         self.listLength = listLength

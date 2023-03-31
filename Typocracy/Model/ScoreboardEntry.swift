@@ -13,12 +13,15 @@ struct ScoreboardEntry : Codable {
     var date : String?
     
     init(name: String? = nil, score: Int? = nil, date: Date = Date()) {
+        
         self.name = name
         self.score = score
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
         dateFormatter.locale = Locale.current
-        self.date = dateFormatter.string(from: date)    }
+        self.date = dateFormatter.string(from: date)
+        
+    }
     
 }
