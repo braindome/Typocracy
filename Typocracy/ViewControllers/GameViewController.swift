@@ -111,7 +111,7 @@ class GameViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func endGameAlert() {
+    private func endGameAlert() {
         
         // Show alert with final score, sends to Final Score 
         let alert = UIAlertController(title: "Game Over", message: "Your final score is \(game!.score)", preferredStyle: .alert)

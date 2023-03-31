@@ -76,10 +76,12 @@ class ScoreboardViewController: UITableViewController {
                 
         // Format the text using attributed strings
         let attrs = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
-        let nameAttrs = [NSAttributedString.Key.foregroundColor: UIColor.blue,
+        let nameAttrs = [NSAttributedString.Key.foregroundColor: UIColor.white,
                          NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
-        let scoreAttrs = [NSAttributedString.Key.foregroundColor: UIColor.red,
+        var scoreAttrs = [NSAttributedString.Key.foregroundColor: UIColor.white,
                           NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]
+        if score! < 0 { scoreAttrs = [NSAttributedString.Key.foregroundColor: UIColor.red,
+                                     NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)]}
         
         let nameString = NSMutableAttributedString(string: name!, attributes: nameAttrs)
         let scoreString = NSMutableAttributedString(string: " \(score!)", attributes: scoreAttrs)
@@ -92,11 +94,11 @@ class ScoreboardViewController: UITableViewController {
         return cell
     }
     
-    private func registerTableViewCells() {
+    /*private func registerTableViewCells() {
         let textFieldCell = UINib(nibName: "TableViewCell",bundle: nil)
         self.tableView.register(textFieldCell, forCellReuseIdentifier: "TableViewCell")
         
-    }
+    }*/
     
 
 }
