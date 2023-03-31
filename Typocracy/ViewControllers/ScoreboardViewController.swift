@@ -32,7 +32,13 @@ class ScoreboardViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
         scoreboard.load()
+        
+        // Uncomment to reset the scoreboard.
+        //scoreboard.reset()
+
  
         if let name = entryName, let score = entryScore {
             scoreboard.addEntry(ScoreboardEntry(name: name, score: score))
@@ -61,7 +67,8 @@ class ScoreboardViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "scoreEntryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+
         let entry = scoreboard.entries[indexPath.row]
         let name = entry.name
         let score = entry.score
@@ -78,14 +85,17 @@ class ScoreboardViewController: UITableViewController {
         let scoreString = NSMutableAttributedString(string: " \(score!)", attributes: scoreAttrs)
         let dateString = NSAttributedString(string: "  \(date!)", attributes: attrs)
         
-        let attributedString = NSMutableAttributedString()
-        attributedString.append(nameString)
-        attributedString.append(scoreString)
-        attributedString.append(dateString)
-        
-        cell.textLabel?.attributedText = attributedString
+        cell.nameCellLabel.attributedText = nameString
+        cell.scoreCellLabel.attributedText = scoreString
+        cell.dateCellLabel.attributedText = dateString
         
         return cell
+    }
+    
+    private func registerTableViewCells() {
+        let textFieldCell = UINib(nibName: "TableViewCell",bundle: nil)
+        self.tableView.register(textFieldCell, forCellReuseIdentifier: "TableViewCell")
+        
     }
     
 
